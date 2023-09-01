@@ -1,20 +1,31 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import LoginPage from './src/pages/LoginPage';
+import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
+import { useCallback } from 'react';
+import { View } from 'react-native';
 
+
+SplashScreen.preventAutoHideAsync();
 export default function App() {
+  const [isLoaded] = useFonts({
+    "bold":require("./assets/fonts/Roboto-Bold.ttf"),
+    "medium":require("./assets/fonts/Roboto-Medium.ttf")
+  })
+  const handleOnLayout = useCallback(async () =>{
+    if(isLoaded){
+      await SplashScreen.hideAsync();
+    }
+  },[isLoaded])
+
+  if(!isLoaded){
+    return null;
+  }
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <View onLayout={handleOnLayout}>
+      <LoginPage/>
       <StatusBar style="auto" />
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
