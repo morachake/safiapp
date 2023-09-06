@@ -1,7 +1,12 @@
 import React from 'react'
+import { Text } from 'react-native'
 
 export default function Input  ()  {
   return (
-    <div>I</div>
+    <div>
+      <Text
+        
+      />
+    </div>
   )
 }
