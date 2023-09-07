@@ -3,8 +3,8 @@ import LoginPage from './src/pages/LoginPage';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { useCallback } from 'react';
-import { View } from 'react-native';
-
+import {  View } from 'react-native';
+// import { SafeAreaView } from 'react-native-safe-area-context';
 
 SplashScreen.preventAutoHideAsync();
 export default function App() {
@@ -22,10 +22,10 @@ export default function App() {
     return null;
   }
   return (
-    <View onLayout={handleOnLayout}>
-      <LoginPage/>
+    <>
       <StatusBar style="auto" />
-    </View>
+      <LoginPage/>
+    </>
   );
 }
 
