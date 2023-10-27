@@ -1,31 +1,33 @@
 import { StatusBar } from 'expo-status-bar';
-import LoginPage from './src/pages/LoginPage';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import Login from './src/pages/Login';
 import { useFonts } from 'expo-font';
-import * as SplashScreen from 'expo-splash-screen';
 import { useCallback } from 'react';
-import {  View } from 'react-native';
-// import { SafeAreaView } from 'react-native-safe-area-context';
 
-SplashScreen.preventAutoHideAsync();
 export default function App() {
-  const [isLoaded] = useFonts({
-    "bold":require("./assets/fonts/Roboto-Bold.ttf"),
-    "medium":require("./assets/fonts/Roboto-Medium.ttf")
+  const [fontsLoaded,fontError] = useFonts({
+    'Bold' : require('./assets/fonts/Roboto-Black.ttf'),
+    'Medium' : require('./assets/fonts/Roboto-Medium.ttf'), 
+    'light' : require('./assets/fonts/Roboto-Light.ttf'),
+    'Italic' : require('./assets/fonts/Roboto-Italic.ttf')
   })
-  const handleOnLayout = useCallback(async () =>{
-    if(isLoaded){
+
+  const onLayoutRootView = useCallback (async () => {
+    if (!fontsLoaded || fontError){
       await SplashScreen.hideAsync();
     }
-  },[isLoaded])
+  },[fontsLoaded,fontError])
 
-  if(!isLoaded){
+  if(!fontsLoaded && fontError){
     return null;
   }
   return (
-    <>
-      <StatusBar style="auto" />
-      <LoginPage/>
-    </>
+   <SafeAreaProvider onLayout={onLayoutRootView}>
+      <>
+          <StatusBar style="auto" />
+          <Login/>
+      </>         
+   </SafeAreaProvider>
   );
 }
-
