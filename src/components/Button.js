@@ -1,5 +1,6 @@
 import React from "react";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
+
 import { COLORS } from "../constants/Index";
 
 export default function Button() {
@@ -14,7 +15,7 @@ export default function Button() {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 12,
+    marginTop: 18,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: COLORS.primary,

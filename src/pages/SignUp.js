@@ -5,7 +5,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import Button from "../components/Button";
 import { COLORS, IMAGES } from "../constants/Index";
-export default function Login() {
+export default function SignUp() {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.background }}>
       <View style={{ paddingTop: 10 }}>
@@ -22,37 +22,40 @@ export default function Login() {
               fontFamily: "Medium",
             }}
           >
-            Login to your account
+            Create a new account
           </Text>
         </View>
         <View style={{ alignItems: "center", marginTop: 18 }}>
           <TextInput placeholder="Type : " style={styles.input} />
           <TextInput placeholder="Email" style={styles.input} />
+          <TextInput placeholder="First Name" style={styles.input} />
+          <TextInput placeholder="LastName : " style={styles.input} />
           <TextInput placeholder="Password" style={styles.input} />
+          <TextInput placeholder="Password" style={styles.input} />
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-around",
+              alignContent: "center",
+              marginTop: 20,
+              width: "90%"
+            }}
+          >
+            <FontAwesome name="check-square" size={24} color={COLORS.primary} />
+            <Text>
+              By signing up you accept the Term of services and Privacy Policy
+            </Text>
+          </View>
         </View>
         <View style={{ alignItems: "center", marginTop: 18 }}>
           <View
             style={{ justifyContent: "space-around", alignItems: "center" }}
           />
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-around",
-              marginTop: 15,
-            }}
-          >
-            <FontAwesome name="check-square" size={24} color={COLORS.primary} />
-            <Text>Forgot password?</Text>
-          </View>
+          
           <Button />
-          <Text style={{ fontFamily: "Bold", fontSize: 25, marginTop: 12 }}>
-            OR
+          <Text style={{ fontFamily: "Light", fontSize: 12, marginTop: 12 }}>
+            Already have an account ? Login
           </Text>
-          <View style={styles.socialIcons}>
-            <Entypo name="facebook-with-circle" size={44} color="#0021F5"style={styles.icon} />
-            <AntDesign name="google" size={44} color="black" style={styles.icon}/>
-            <AntDesign name="apple1" size={44} color="black" style={styles.icon}/>
-          </View>
         </View>
       </View>
     </SafeAreaView>
@@ -87,7 +90,4 @@ const styles = StyleSheet.create({
     marginTop: 25,
     flexDirection: "row",
   },
-  icon:{
-    marginRight: 15,
-  }
 });
