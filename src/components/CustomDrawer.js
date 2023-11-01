@@ -19,8 +19,8 @@ export default function CustomDrawer(props) {
                 </View>
 
                 <View style={{paddingTop:20}}>
-                    <View style={{justifyContent:"center",alignItems:"center"}}>
-                         <Text>Tell Us What you think</Text>
+                    <View style={{justifyContent:"center",alignItems:"center" ,borderBottomWidth:1}}>
+                         <Text style ={{padding:20}}>Tell Us What you think</Text> 
                     </View>
                    
                 </View>
