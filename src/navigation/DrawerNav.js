@@ -8,7 +8,10 @@ const Drawer = createDrawerNavigator();
 
 export default function DrawerNav() {
   return (
-    <Drawer.Navigator >
+    <Drawer.Navigator 
+    screenOptions={{
+      
+    }} >
       <Drawer.Screen name="HomeScreen" component={HomeScreen}/>
     </Drawer.Navigator>
   );
