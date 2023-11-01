@@ -6,7 +6,8 @@ import HomeScreen from "../pages/HomeScreen";
 import MyAccount from "../pages/MyAccount";
 import Help from "../pages/Help"
 import CustomDrawer from "../components/CustomDrawer";
-import { Ionicons ,EvilIcons, Feather} from '@expo/vector-icons';
+import { Ionicons , Feather, Entypo , FontAwesome5} from '@expo/vector-icons';
+import { COLORS } from "../constants/Index";
 
 const Drawer = createDrawerNavigator();
 
@@ -15,8 +16,14 @@ export default function DrawerNav() {
     <Drawer.Navigator
     initialRouteName="Home"drawerContent={props => <CustomDrawer {...props} />}
       screenOptions={{
-        drawerActiveBackgroundColor: "#D9D9D9",
-        drawerActiveTintColor: "#000000",
+        drawerActiveBackgroundColor: COLORS.primary,
+        drawerActiveTintColor: "#FFFF",
+        drawerInactiveTintColor : COLORS.secondary,
+        drawerLabelStyle:{
+          marginLeft:-20,
+          fontFamily: "Medium",
+          fontSize: 15,
+        },
         drawerStyle: {
           backgroundColor: "#D9D9D9",
           TextStyle: {
@@ -28,14 +35,14 @@ export default function DrawerNav() {
       <Drawer.Screen name="Home" component={HomeScreen} 
         options={{
           drawerIcon: ({ color, size }) => (
-            <Ionicons name="home" size={size} color={color} />
+            <Ionicons name="home-outline" size={size} color={color} />
           ),
         }}
       />
       <Drawer.Screen name="My Account" component={MyAccount} 
          options={{
           drawerIcon: ({ color, size }) => (
-            <EvilIcons name="user" size={size} color={color} />
+            <FontAwesome5 name="user-circle" size={size} color={color} />
           ),
         }}
       />
@@ -46,7 +53,13 @@ export default function DrawerNav() {
           ),
         }}
       />
-      <Drawer.Screen name="Help" component={Help} />
+      <Drawer.Screen name="Help" component={Help} 
+        options={{
+          drawerIcon: ({ color, size }) => (
+            <Entypo name="help" size={size} color={color} />
+          ),
+        }}
+      />
     </Drawer.Navigator>
   );
 }
