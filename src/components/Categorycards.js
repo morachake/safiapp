@@ -9,7 +9,6 @@ export default function CategoryCard() {
     </View>
   );
 }
-
 const styles = StyleSheet.create({
     container:{
         justifyContent: 'center',

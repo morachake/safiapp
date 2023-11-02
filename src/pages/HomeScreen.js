@@ -4,6 +4,7 @@ import { COLORS } from "../constants/Index";
 import { Entypo } from '@expo/vector-icons';
 import CategoryCard from "../components/Categorycards";
 import { ScrollView } from "react-native-gesture-handler";
+import Homecards from "../components/Homecards";
 
 export default function HomeScreen() {
   return (
@@ -21,6 +22,7 @@ export default function HomeScreen() {
         <CategoryCard/>
         <CategoryCard/>
       </ScrollView>
+      <Homecards/>
     </View>
   );
 }
