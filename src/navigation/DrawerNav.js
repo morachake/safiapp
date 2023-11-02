@@ -40,7 +40,7 @@ export default function DrawerNav() {
         }}
       />
       <Drawer.Screen name="My Account" component={MyAccount} 
-         options={{
+        options={{
           drawerIcon: ({ color, size }) => (
             <FontAwesome5 name="user-circle" size={size} color={color} />
           ),

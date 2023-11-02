@@ -38,7 +38,7 @@ export default function SignUp() {
               justifyContent: "space-around",
               alignContent: "center",
               marginTop: 20,
-              width: "90%"
+              width: "90%",
             }}
           >
             <FontAwesome name="check-square" size={24} color={COLORS.primary} />
@@ -51,7 +51,6 @@ export default function SignUp() {
           <View
             style={{ justifyContent: "space-around", alignItems: "center" }}
           />
-          
           <Button />
           <Text style={{ fontFamily: "Light", fontSize: 12, marginTop: 12 }}>
             Already have an account ? Login
