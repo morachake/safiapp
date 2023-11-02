@@ -1,10 +1,18 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View , Text, Image} from 'react-native';
 
 export default function Homecards() {
   return (
    <View>
-        <Text>Images</Text>
+        <Image
+            source={require("../assets/images/Rectangle 35.png")}
+            alt='Glass'
+            style={{
+              width: 100,
+              height: 100,
+              borderRadius: 100,
+            }}
+          />
    </View>
   );
 }
