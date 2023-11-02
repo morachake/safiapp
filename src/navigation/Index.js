@@ -8,7 +8,12 @@ export default function Navigation() {
       screenOptions={{
         headerShown: false,
         headerStyle:{
+          backgroundColor: "#000000",
+          elevation: 0,
         },
+        headerTitleStyle:{
+          fontFamily:"Light"
+        }
       }}
     >
       <Stack.Screen name="Home" component={DrawerNav} />
