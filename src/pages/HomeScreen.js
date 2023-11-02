@@ -2,6 +2,8 @@ import React from "react";
 import { View, Text, TextInput, StyleSheet } from "react-native";
 import { COLORS } from "../constants/Index";
 import { Entypo } from '@expo/vector-icons';
+import CategoryCard from "../components/Categorycards";
+import { ScrollView } from "react-native-gesture-handler";
 
 export default function HomeScreen() {
   return (
@@ -13,7 +15,12 @@ export default function HomeScreen() {
           style={styles.input}
         />
       </View>
-
+      <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent}>
+        <CategoryCard/>
+        <CategoryCard/>
+        <CategoryCard/>
+        <CategoryCard/>
+      </ScrollView>
     </View>
   );
 }
@@ -39,5 +46,14 @@ const styles = StyleSheet.create({
     border: "none",
     paddingHorizontal: 15,
     borderRadius: 15,
+  },
+  scrollView: {
+    marginTop: 10,
+    width: "100%",
+    height: 200,
+  },
+  scrollViewContent: {
+    flexDirection: "row",
+    justifyContent: "space-between",
   }
 })
