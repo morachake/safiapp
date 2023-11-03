@@ -5,6 +5,7 @@ import { Entypo } from '@expo/vector-icons';
 import CategoryCard from "../components/Categorycards";
 import { ScrollView } from "react-native-gesture-handler";
 import Homecards from "../components/Homecards";
+import SearchCards from "../components/SearchCards";
 
 export default function SearchScreen() {
   const categoryData = ["Plastic", "Paper", "Glass", "Metal", "Organic"]
@@ -17,8 +18,8 @@ export default function SearchScreen() {
           style={styles.input}
         />
       </View>
-      <ScrollView stickyHeaderIndices={[0]} contentContainerStyle={{ alignItems: "center" }}>
-        
+      <ScrollView stickyHeaderIndices={[0]} contentContainerStyle={{ alignItems: "center",padding:10 }}>
+        <SearchCards/>
       </ScrollView>
     </View>
   );
