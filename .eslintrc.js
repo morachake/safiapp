@@ -1,7 +1,11 @@
 module.exports = {
     root: true,
     extends: [
-      'universe/native',
+      "plugin:react/recommended",
+      "airbnb",
+      "airbnb/hooks",
+      "prettier",
+      "prettier/react"
     ],
   };
   
