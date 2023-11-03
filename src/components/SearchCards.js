@@ -20,10 +20,12 @@ const styles = StyleSheet.create({
      flexDirection:"row",
      justifyContent:"space-between",
      alignItems:"center",
-     width:"80%",
-     margin: 20,
+     width:"85%",
+     margin: 10,
      height:76,
-     backgroundColor:COLORS.background
+     padding:5,
+     backgroundColor:COLORS.background,
+     borderRadius: 10
     },
     image:{
         height:75,

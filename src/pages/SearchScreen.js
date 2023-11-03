@@ -18,7 +18,11 @@ export default function SearchScreen() {
           style={styles.input}
         />
       </View>
-      <ScrollView stickyHeaderIndices={[0]} contentContainerStyle={{ alignItems: "center",padding:10 }}>
+      <ScrollView  contentContainerStyle={{ alignItems: "center",padding:10 }}>
+        <SearchCards/>
+        <SearchCards/>
+        <SearchCards/>
+        <SearchCards/>
         <SearchCards/>
       </ScrollView>
     </View>
