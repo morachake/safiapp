@@ -8,6 +8,7 @@ import Help from "../pages/Help"
 import CustomDrawer from "../components/CustomDrawer";
 import { Ionicons , Feather, Entypo , FontAwesome5} from '@expo/vector-icons';
 import { COLORS } from "../constants/Index";
+import SearchScreen from "../pages/SearchScreen";
 
 const Drawer = createDrawerNavigator();
 
@@ -32,7 +33,7 @@ export default function DrawerNav() {
         },
       }}
     >
-      <Drawer.Screen name="Home" component={HomeScreen} 
+      <Drawer.Screen name="Home" component={SearchScreen} 
         options={{
           drawerIcon: ({ color, size }) => (
             <Ionicons name="home-outline" size={size} color={color} />
