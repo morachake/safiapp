@@ -7,7 +7,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import Homecards from "../components/Homecards";
 
 export default function HomeScreen() {
-  const categoryData = ["Plastic","Paper","Glass","Metal","Organic"]
+  const categoryData = ["Plastic", "Paper", "Glass", "Metal", "Organic"]
   return (
     <View style={styles.container}>
       <View style={styles.inputcontainer}>
@@ -19,24 +19,25 @@ export default function HomeScreen() {
       </View>
       <ScrollView stickyHeaderIndices={[0]} contentContainerStyle={{ alignItems: "center" }}>
         <View>
-          <View style={{ marginTop: 10, flexDirection: "row",padding: 5 }}>
-            <FlatList 
+          <View style={{ marginTop: 10, flexDirection: "row", padding: 5 }}>
+            <FlatList
               data={categoryData}
               horizontal
               showsHorizontalScrollIndicator={false}
               keyExtractor={(item) => item}
-              renderItem={({item}) => (
-                <CategoryCard label={item}/>
+              renderItem={({ item }) => (
+                <CategoryCard label={item} />
               )}
             />
           </View>
-          <ScrollView style={styles.homecardsContainer}>
-          <Homecards />
-          <Homecards />
-          <Homecards />
-          <Homecards />
-          <Homecards />
-        </ScrollView>
+          <ScrollView contentContainerStyle={styles.homecardsContainer}>
+            <Homecards />
+            <Homecards />
+            <Homecards />
+            <Homecards />
+            <Homecards />
+            <Homecards />
+          </ScrollView>
         </View>
 
       </ScrollView>
@@ -77,5 +78,15 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingVertical: 20
 
+  },
+  homecardsContainer: {
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+    padding: 20,
+    paddingVertical: 10
   }
 })

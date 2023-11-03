@@ -4,16 +4,15 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 export default function Homecards() {
   return (
-   <ScrollView >
+   <View style={{margin:8}}>
         <Image
             source={require("../assets/images/bottle.png")}
             alt='Glass'
             style={{
               width: 150,
               height: 150,
-            
             }}
           />
-   </ScrollView>
+   </View>
   );
 }
