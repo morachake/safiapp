@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TextInput, StyleSheet } from "react-native";
+import { View, Text, TextInput, StyleSheet, FlatList } from "react-native";
 import { COLORS } from "../constants/Index";
 import { Entypo } from '@expo/vector-icons';
 import CategoryCard from "../components/Categorycards";
@@ -7,6 +7,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import Homecards from "../components/Homecards";
 
 export default function HomeScreen() {
+  const categoryData = ["Plastic","Paper","Glass","Metal","Organic"]
   return (
     <View style={styles.container}>
       <View style={styles.inputcontainer}>
@@ -16,13 +17,29 @@ export default function HomeScreen() {
           style={styles.input}
         />
       </View>
-      <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent}>
-        <CategoryCard/>
-        <CategoryCard/>
-        <CategoryCard/>
-        <CategoryCard/>
+      <ScrollView stickyHeaderIndices={[0]} contentContainerStyle={{ alignItems: "center" }}>
+        <View>
+          <View style={{ marginTop: 10, flexDirection: "row",padding: 5 }}>
+            <FlatList 
+              data={categoryData}
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              keyExtractor={(item) => item}
+              renderItem={({item}) => (
+                <CategoryCard label={item}/>
+              )}
+            />
+          </View>
+          <ScrollView style={styles.homecardsContainer}>
+          <Homecards />
+          <Homecards />
+          <Homecards />
+          <Homecards />
+          <Homecards />
+        </ScrollView>
+        </View>
+
       </ScrollView>
-      <Homecards/>
     </View>
   );
 }
@@ -34,14 +51,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  inputcontainer: { 
+  inputcontainer: {
     flexDirection: 'row',
-    width: "90%", 
+    width: "90%",
     alignItems: 'center',
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 15,
-    padding: 4 },
+    padding: 4
+  },
   input: {
     width: "80%",
     height: 50,
@@ -57,5 +75,7 @@ const styles = StyleSheet.create({
   scrollViewContent: {
     flexDirection: "row",
     justifyContent: "space-between",
+    paddingVertical: 20
+
   }
 })

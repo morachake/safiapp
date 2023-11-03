@@ -2,10 +2,10 @@ import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import { COLORS } from '../constants/Index';
 
-export default function CategoryCard() {
+export default function CategoryCard({label}) {
   return (
     <View style={styles.container}>
-        <Text style={{color:"#FFF"}}>Plastic</Text>
+        <Text style={{color:"#FFF"}}>{label}</Text>
     </View>
   );
 }
